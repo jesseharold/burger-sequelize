@@ -23,10 +23,11 @@ module.exports = function(app) {
     app.put("/:id", function (request, response) {
         //console.log("devouring burger #", request.params.id);
         db.Burger.update({
+            devoured: 1,
+        }, {
             where: {
                 id: request.params.id
-            }, 
-            devoured: true
+            }
         }).then(function() {
             response.redirect("/");
         });
