@@ -3,7 +3,7 @@ var db = require("../models");
 
 // export for server.js
 module.exports = function(app) {
-    
+
     // ROUTES
     app.get("/", function (request, response) {
         db.Burger.findAll({}).then(function(data) {
@@ -25,9 +25,8 @@ module.exports = function(app) {
         db.Burger.update({
             where: {
                 id: request.params.id
-            }, {
-                devoured: true
-            }
+            }, 
+            devoured: true
         }).then(function() {
             response.redirect("/");
         });

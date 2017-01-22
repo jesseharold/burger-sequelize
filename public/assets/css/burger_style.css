@@ -1,15 +1,17 @@
 body {
     background-color: #d2af05;
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     font-family: "Raleway", sans-serif;
 }
 h1, h3 {
     font-family: "Courgette", cursive;
     text-shadow: black 2px 1px 3px;
+    text-align: center;
 }
 .burgerimage {
     margin: 10px auto;
+    display: block
 }
 .container {
     width: 700px;
