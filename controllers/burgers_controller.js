@@ -6,7 +6,9 @@ module.exports = function(app) {
 
     // ROUTES
     app.get("/", function (request, response) {
-        db.Burger.findAll({}).then(function(data) {
+        db.Burger.findAll({
+             order: [['burger_name', 'ASC']]
+        }).then(function(data) {
             response.render("index", { burgers: data });
         });
     });
