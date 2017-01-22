@@ -1,0 +1,59 @@
+body {
+    background-color: #d2af05;
+    color: white;
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+}
+h1, h3 {
+    font-family: "Courgette", cursive;
+    text-shadow: black 2px 1px 3px;
+}
+.burgerimage {
+    margin: 10px auto;
+}
+.container {
+    width: 700px;
+    margin: 20px;
+    display: block;
+}
+.category{
+    display: block;
+}
+.devoured {
+    float: right;
+}
+.undevoured {
+    float: left;
+}
+.burger {
+    color: darkred;
+    border: 1px solid black;
+    max-width: 280px;
+    padding: 10px 5px;
+    margin: 15px;
+    background-color: lightcyan;
+}
+.devoured .burger {
+    background-color: #eee;
+    color: #888;
+    border-color: #999;
+}
+.info {
+    font-size: x-small;
+    color: #666;
+}
+.burger-name {
+    margin-top: 0;
+    text-align: center;
+    text-shadow: none;
+}
+form.devour-burger button {
+    margin: 10px auto 3px;
+    display: block;
+}
+form.create-burger button {
+    vertical-align: top;
+}
+form.create-burger textarea {
+    width: 265px;
+}
