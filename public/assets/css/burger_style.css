@@ -27,6 +27,10 @@ h1, h3 {
 .undevoured {
     float: left;
 }
+.devoured>h3 {
+    color: lightgrey;
+    font-size: .9em;
+}
 .burger {
     color: darkred;
     border: 1px solid black;
@@ -52,6 +56,9 @@ h1, h3 {
 form.devour-burger button {
     margin: 10px auto 3px;
     display: block;
+}
+form.create-burger {
+    margin-left: 15px;
 }
 form.create-burger button {
     vertical-align: top;

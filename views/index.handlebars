@@ -18,7 +18,7 @@
           <button type="submit">Devour this burger</button>
         </form>
         <div class="info info-id">id: {{this.id}}</div>
-        <div class="info info-date">last modified: {{this.date}}</div>
+        <div class="info info-date">last modified: {{this.updatedAt}}</div>
       </div>
     {{/unless}}
   {{/each}}
@@ -31,7 +31,7 @@
       <div class="burger">
         <h3 class="burger-name">{{this.burger_name}}</h3>
         <div class="info info-id">id: {{this.id}}</div>
-        <div class="info info-date">last modified: {{this.date}}</div>
+        <div class="info info-date">last modified: {{this.updatedAt}}</div>
       </div>
     {{/if}}
   {{/each}}
