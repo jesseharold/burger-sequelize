@@ -15,7 +15,7 @@ h1, h3 {
 }
 .container {
     width: 700px;
-    margin: 20px;
+    margin: 20px auto;
     display: block;
 }
 .category{
