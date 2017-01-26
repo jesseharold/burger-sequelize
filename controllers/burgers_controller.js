@@ -1,8 +1,5 @@
 // import the model to use the functions
 var db = require("../models");
-// set up relation
-//db.Burger.belongsTo(db.Customer, {foreignKey: 'createdBy'});
-//db.Customer.hasMany(db.Burger);
 
 // export for server.js
 module.exports = function(app) {
@@ -14,9 +11,10 @@ module.exports = function(app) {
 
     app.get("/burgers", function (request, response) {
         db.Burger.findAll({
-            order: [['burger_name', 'ASC']]
-//            include: [db.User]
+            order: [['burger_name', 'ASC']],
+            include: [db.Customer]
         }).then(function(data) {
+            console.log(data);
             response.render("burgers", {burgers: data});
         });
     });

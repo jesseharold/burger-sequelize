@@ -11,6 +11,20 @@ module.exports = function(sequelize, DataTypes) {
         }, 
         createdBy: DataTypes.INTEGER,
         devouredBy: DataTypes.INTEGER
+    },
+    {
+      // We're saying that we want our Customer to have Burgers
+      classMethods: {
+        associate: function(models) {
+          Burger.belongsTo(models.Customer,
+            {
+//              onDelete: "cascade",
+//              foreignKey: {
+//                allowNull: false
+//              }
+            });
+        }
+      }
     });
     return Burger;
 };
