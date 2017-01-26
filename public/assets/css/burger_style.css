@@ -72,3 +72,15 @@ form.create-burger button {
 form.create-burger textarea {
     width: 265px;
 }
+#changeUser {
+    display: none;
+    font-size: .3em;
+    text-decoration: underline;
+    font-family: Arial, sans-serif;
+    text-shadow: none;
+    color: white;
+    position: relative;
+    left: 22px;
+    display: inline-block;
+    line-height: .9em;
+}

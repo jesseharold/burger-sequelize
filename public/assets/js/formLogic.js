@@ -17,8 +17,8 @@ $(document).ready(function() {
             }).done(function(response){
                 if(response && response.name){
                     // remember which user you are
-                    localStorage.setItem("userName",  response.name);
-                    localStorage.setItem("userID",  response.id);
+                    localStorage.setItem("userName", response.name);
+                    localStorage.setItem("userID", response.id);
                     // user creation was successful, go to the burgers page
                     window.location.replace("/burgers");
                 } else {
@@ -43,6 +43,10 @@ $(document).ready(function() {
     if (currentName){
         console.log(currentName);
         $("span.userName").text(", " + currentName);   
+        $("#changeUser").show().click(function(){
+            localStorage.setItem("userName", "");
+            window.location.replace("/");
+        });
     }
     if (currentID){
         console.log("ID: ", currentID);
