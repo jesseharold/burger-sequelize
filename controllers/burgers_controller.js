@@ -6,32 +6,38 @@ module.exports = function(app) {
 
     // ROUTES
     app.get("/", function (request, response) {
+        response.render("index");
+    });
+
+    app.get("/burgers", function (request, response) {
         db.Burger.findAll({
              order: [['burger_name', 'ASC']]
         }).then(function(data) {
-            response.render("index", { burgers: data });
+            response.render("burgers", {burgers: data});
         });
     });
 
-    app.post("/", function (request, response) {
+    app.post("/burgers", function (request, response) {
         //console.log("creating burger ", request.body.burger_name);
         db.Burger.create({
-            burger_name: request.body.burger_name
+            burger_name: request.body.burger_name,
+            createdBy: request.body.userID
         }).then(function() {
-            response.redirect("/");
+            response.redirect("/burgers");
         });
     });
 
-    app.put("/:id", function (request, response) {
-        //console.log("devouring burger #", request.params.id);
+    app.post("/burgers/:id/:user", function (request, response) {
+        console.log(request.params.user + " devouring burger #", request.params.id);
         db.Burger.update({
             devoured: 1,
+            devouredBy: request.params.user
         }, {
             where: {
                 id: request.params.id
             }
         }).then(function() {
-            response.redirect("/");
+            response.redirect("/burgers");
         });
     });
 

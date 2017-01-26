@@ -53,15 +53,21 @@ h1, h3 {
     text-align: center;
     text-shadow: none;
 }
-form.devour-burger button {
+form.create-user {
+    text-align: center;
+}
+form button {
     margin: 10px auto 3px;
     display: block;
+    font-size: 1em;
 }
 form.create-burger {
     margin-left: 15px;
 }
 form.create-burger button {
     vertical-align: top;
+    margin: 0;
+    display: inline-block;
 }
 form.create-burger textarea {
     width: 265px;

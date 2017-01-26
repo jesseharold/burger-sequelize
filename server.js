@@ -24,6 +24,7 @@ app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
 require("./controllers/burgers_controller.js")(app);
+require("./controllers/users_controller.js")(app);
 
 // sync the data model to the database before starting app
 db.sequelize.sync().then(function(){
