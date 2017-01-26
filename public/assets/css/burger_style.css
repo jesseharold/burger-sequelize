@@ -76,6 +76,7 @@ form.create-burger textarea {
     display: none;
     font-size: .3em;
     text-decoration: underline;
+    cursor: pointer;
     font-family: Arial, sans-serif;
     text-shadow: none;
     color: white;

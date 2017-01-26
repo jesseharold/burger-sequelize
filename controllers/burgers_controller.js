@@ -14,7 +14,7 @@ module.exports = function(app) {
             order: [['burger_name', 'ASC']],
             include: [db.Customer]
         }).then(function(data) {
-            console.log(data);
+            //console.log(data);
             response.render("burgers", {burgers: data});
         });
     });
