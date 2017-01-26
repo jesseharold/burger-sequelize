@@ -28,7 +28,7 @@ module.exports = function(app) {
         });
     });
 
-    app.post("/burgers/eat/:id/:user", function (request, response) {
+    app.put("/burgers/eat/:id/:user", function (request, response) {
         console.log(request.params.user + " devouring burger #", request.params.id);
         db.Burger.update({
             devoured: 1,
@@ -37,8 +37,8 @@ module.exports = function(app) {
             where: {
                 id: request.params.id
             }
-        }).then(function() {
-            response.redirect("/burgers/");
+        }).then(function(data) {
+            response.json(data);
         });
     });
 

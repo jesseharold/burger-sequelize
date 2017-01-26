@@ -53,8 +53,14 @@ $(document).ready(function() {
         // console.log(currentName + " devours burger " + burgerID);
         var endpoint = "/burgers/eat/" + burgerID + "/" + currentID;
          $.ajax({
-            method: "POST",
+            method: "PUT",
             url: endpoint
+        }).done(function(response){
+            if (response){
+                window.location.replace("/burgers");
+            } else {
+                alert("Something went wrong trying to create user", response);
+            }
         });
     });
 });

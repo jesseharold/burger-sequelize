@@ -12,5 +12,5 @@ In this assignment, you're going to Sequelize the `Burger` app you made last wee
 #### Tier 2: Customer Associations (Challenge)
 
 * Add in a Customer association to the project. This will involve creating at least one new Customer model and connecting it with your Burger model.
-* make dates more readable w moment
-* refresh not working after devouring...
+* make dates more readable w moment. tried to do this for a long time, could not figure out how to work w the sequelize date object. 
+* server side redirect not working, using front-end redirect which is weird. 
