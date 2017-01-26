@@ -9,7 +9,6 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false, 
             defaultValue: 0
         }, 
-        createdBy: DataTypes.INTEGER,
         devouredBy: DataTypes.INTEGER
     },
     {

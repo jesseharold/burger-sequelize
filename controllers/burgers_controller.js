@@ -23,7 +23,7 @@ module.exports = function(app) {
         //console.log("creating burger ", request.body.burger_name);
         db.Burger.create({
             burger_name: request.body.burger_name,
-            createdBy: request.body.userID
+            CustomerId: request.body.userID
         }).then(function() {
             response.redirect("/burgers/");
         });
