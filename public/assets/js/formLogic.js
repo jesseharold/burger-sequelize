@@ -1,7 +1,26 @@
 $(document).ready(function() {
-    
+    //current user's name and ID
     var currentName = localStorage.getItem("userName");
     var currentID = localStorage.getItem("userID");
+    if (currentName){
+        //console.log(currentName);
+        $("span.userName").text(", " + currentName);   
+        $("#changeUser").show();
+    }
+    if (currentID){
+        //console.log("ID: ", currentID);
+        $("form.create-burger input[name=userID]").val(currentID);
+    }
+
+    $("#changeUser").click(function(){
+        localStorage.setItem("userName", "");
+        localStorage.setItem("userID", "");
+        window.location.replace("/");
+    });
+
+    $("form.create-burger textarea").click(function(){
+        $(this).val("");
+    })
 
     $("button#addUser").click(function(event){
         event.preventDefault();
@@ -31,25 +50,11 @@ $(document).ready(function() {
     $("form.devour-burger #devourBurger").click(function(event){
         event.preventDefault();
         var burgerID = $(this).prev("input[name=burgerID]").val();
-        console.log(currentName + " devours burger " + burgerID);
-        var endpoint = "/burgers/" + burgerID + "/" + currentID;
+        // console.log(currentName + " devours burger " + burgerID);
+        var endpoint = "/burgers/eat/" + burgerID + "/" + currentID;
          $.ajax({
-                method: "POST",
-                url: endpoint
-            }).done(function(response){
-                console.log("done devouring");
-            });
-    });
-    if (currentName){
-        console.log(currentName);
-        $("span.userName").text(", " + currentName);   
-        $("#changeUser").show().click(function(){
-            localStorage.setItem("userName", "");
-            window.location.replace("/");
+            method: "POST",
+            url: endpoint
         });
-    }
-    if (currentID){
-        console.log("ID: ", currentID);
-        $("form.create-burger input[name=userID]").val(currentID);
-    }
+    });
 });

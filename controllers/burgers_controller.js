@@ -1,5 +1,6 @@
 // import the model to use the functions
 var db = require("../models");
+var moment = require("moment");
 
 // export for server.js
 module.exports = function(app) {
@@ -11,7 +12,7 @@ module.exports = function(app) {
 
     app.get("/burgers", function (request, response) {
         db.Burger.findAll({
-             order: [['burger_name', 'ASC']]
+            order: [['burger_name', 'ASC']]
         }).then(function(data) {
             response.render("burgers", {burgers: data});
         });
@@ -23,11 +24,11 @@ module.exports = function(app) {
             burger_name: request.body.burger_name,
             createdBy: request.body.userID
         }).then(function() {
-            response.redirect("/burgers");
+            response.redirect("/burgers/");
         });
     });
 
-    app.post("/burgers/:id/:user", function (request, response) {
+    app.post("/burgers/eat/:id/:user", function (request, response) {
         console.log(request.params.user + " devouring burger #", request.params.id);
         db.Burger.update({
             devoured: 1,
@@ -37,7 +38,7 @@ module.exports = function(app) {
                 id: request.params.id
             }
         }).then(function() {
-            response.redirect("/burgers");
+            response.redirect("/burgers/");
         });
     });
 
