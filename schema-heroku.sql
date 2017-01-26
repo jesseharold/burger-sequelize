@@ -1,4 +1,4 @@
-USE wp433upk59nnhpoh;
+USE xtd7crs4r9jpmz75;
 
 CREATE TABLE burgers (
     id int NOT NULL AUTO_INCREMENT,
