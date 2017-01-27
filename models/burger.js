@@ -15,13 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       // We're saying that we want our Customer to have Burgers
       classMethods: {
         associate: function(models) {
-          Burger.belongsTo(models.Customer,
-            {
-//              onDelete: "cascade",
-//              foreignKey: {
-//                allowNull: false
-//              }
-            });
+          Burger.belongsTo(models.Customer);
         }
       }
     });

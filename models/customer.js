@@ -11,6 +11,7 @@ module.exports = function(sequelize, DataTypes) {
         associate: function(models) {
           // Associating Author with Burger
           Customer.hasMany(models.Burger);
+          Customer.hasMany(models.Burger, {as: "devouredBy"});
         }
       }
     });

@@ -31,7 +31,7 @@
       <div class="burger">
         <h3 class="burger-name">{{this.burger_name}}</h3>
         <div class="info info-id">Created by {{this.Customer.name}} at  {{this.createdAt}}</div>
-        <div class="info info-date">Eaten by user #{{this.devouredBy}} at {{this.updatedAt}}</div>
+        <div class="info info-date">Eaten by {{this.Customer.name}} at {{this.updatedAt}}</div>
       </div>
     {{/if}}
   {{/each}}
